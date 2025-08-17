@@ -1,0 +1,43 @@
+CustomerID: the ID of the customer
+Gender: male/female
+SeniorCitizen: whether the customer is a senior citizen (0/1)
+Partner: whether they live with a partner (yes/no)
+Dependents: whether they have dependents (yes/no)
+Tenure: number of months since the start of the contract
+PhoneService: whether they have phone service (yes/no)
+MultipleLines: whether they have multiple phone lines (yes/no/no phone service) 
+InternetService: the type of internet service (no/fiber/optic)
+OnlineSecurity: if online security is enabled (yes/no/no internet)
+OnlineBackup: if online backup service is enabled (yes/no/no internet)
+DeviceProtection: if the device protection service is enabled (yes/no/no internet) 
+TechSupport: if the customer has tech support (yes/no/no internet)
+StreamingTV: if the TV streaming service is enabled (yes/no/no internet)
+StreamingMovies: if the movie streaming service is enabled (yes/no/no internet)
+Contract: the type of contract (monthly/yearly/two years)
+PaperlessBilling: if the billing is paperless (yes/no)
+PaymentMethod: payment method (electronic check, mailed check, bank trans-
+fer, credit card)
+MonthlyCharges: the amount charged monthly (numeric)
+TotalCharges: the total amount charged (numeric)
+Churn: if the client has canceled the contract (yes/no)
+
+#errors='coerce' --> this argument tells pandas if the value can't be converted to number replace it with NAN(NOT A NUMBER ).
+#With orient='records', each row in the DataFrame becomes a dictionary, and all rows are stored in a list.
+#When you transform data with DictVectorizer, you usually get a lot of zeros & storing
+all these zeros waste memory  .
+#When sparse = True 
+A sparse matrix stores only non-zero values, saving memory.
+Efficient but harder to read and manipulate manually.
+
+#Dense Matrix (When sparse=False)
+sparse=False tells DictVectorizer to return a regular NumPy array, not a sparse matrix.
+More human-readable and easier for some models or debugging.
+Uses more memory.
+
+logistic regression used the sigmoind function to maps any real 
+numbers to probability of a binary outcome (0,1)
+
+model = LogisticRegression(solver='liblinear', random_state=1)
+We use solver = 'liblinear'(library for large linear clasification) as optimization algorithm 
+it;s a coordinate decent algorithm which updates one weight 
+while keeping the other fixed and it is efficient for small-meduim dataset.
